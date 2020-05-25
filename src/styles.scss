@@ -1,0 +1,52 @@
+// Angular Material
+@import '~@angular/material/theming';
+@import '~css-star-rating/scss/star-rating';
+
+@include mat-core();
+$primary: mat-palette($mat-indigo);
+$accent:  mat-palette($mat-pink, A200, A100, A400);
+$warn:    mat-palette($mat-red, A700);
+$theme: mat-light-theme($primary, $accent);
+@include angular-material-theme($theme);
+.m2app-dark {
+  $primary: mat-palette($mat-pink, 700, 500, 900);
+  $accent:  mat-palette($mat-blue-grey, A200, A100, A400);
+  $warn:    mat-palette($mat-red, A700);
+
+  $theme:   mat-dark-theme($primary, $accent, $warn);
+
+  @include angular-material-theme($theme);
+}
+
+
+// font style
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital@0;1&display=swap');
+
+
+* {
+  font-family: 'Kanit', sans-serif;
+  cursor: default;
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  color: rgb(76, 59, 136);
+}
+
+a {
+  list-style: none;
+  text-decoration: none;
+}
+
+
+h3 {
+  font-size: 170%;
+}
+h2 {
+  font-size: 40px; 
+}
+
+h5 {
+  font-size: 15px;
+}

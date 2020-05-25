@@ -1,0 +1,23 @@
+.content {
+  text-align: left;
+  padding: 1%;
+}
+p {
+  color: rgb(76, 59, 136);
+  padding-left: 2%;
+}
+
+.mat-icon-button:hover {
+  color: red;
+
+}
+
+#like1{
+  color: rgb(221, 66, 221);
+}
+#like2{
+  color:black;
+}
+
+
+

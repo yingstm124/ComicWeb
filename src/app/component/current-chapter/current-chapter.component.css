@@ -1,0 +1,99 @@
+
+img{
+  width: 80%;
+}
+
+.line {
+  width: 100%;
+  height: 10px;
+  background: rgb(76, 59, 136);
+}
+
+
+
+/*------- navigation ------*/
+
+.navigation {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 3%;
+}
+
+.navigation .topic {
+  margin-left: 10%;
+}
+.navigation .btn {
+  margin-right: 10%;
+}
+
+
+/*-----content-----*/
+.content {
+  text-align: center;
+}
+
+/*------ post ------*/
+.post-area{
+  text-align: left;
+  padding: 5% 10% 0% 10%;
+}
+
+.post-area .post-form {
+  width: 100%;
+  padding: 2%;
+}
+
+.post-btn-area{
+  text-align: right;
+}
+
+/*------ comment ------*/
+.comment-area {
+  display: block;
+  text-align: center;
+  padding: 0% 10% 0% 10%;
+}
+.comment-area .topic {
+  font-size: 180%;
+  padding: 15px;
+  text-align: left;
+}
+.comment-area .hotcomment .hc_list {
+  margin: 0% 5% 0% 5%;
+}
+.comment-area .comment .nc_list{
+  margin: 0% 5% 0% 5%;
+}
+
+
+
+@media only screen and (max-width: 600px){
+  img{
+    width: 95%;
+  }
+  .comment-area {
+    display: block;
+    text-align: center;
+    padding: 0% 0% 0% 0%;
+  }
+  .comment-area .hotcomment .hc_list {
+    margin: 0% 2% 0% 2%;
+  }
+  .comment-area .comment .nc_list{
+    margin: 0% 2% 0% 2%;
+  }
+
+  .navigation {
+    background: rgba(48, 18, 73, 0.192);
+    padding: 3% 0% 3% 0%;
+  }
+  .navigation .topic {
+    margin-left: 1%;
+  }
+  .navigation .btn {
+    margin-right: 1%;
+  }
+
+}

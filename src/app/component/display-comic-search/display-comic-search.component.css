@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  margin: 10px;
+  height: 140px;
+  width: 280px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container .cover {
+  position: absolute;
+  padding-left: 140px;
+}
+
+.container .cover img {
+  width: 140px;
+}
+
+.container .detail {
+  position: absolute;
+  padding-top: 2%;
+  padding-left: 2%;
+}
+
+
+@media only screen and (max-width: 600px){
+
+  .container{
+    width: 100px;
+    height: 100px;
+  }
+  .container .cover {
+    position: absolute;
+    padding-left: 0px;
+  }
+  .container .cover img {
+    width: 100px;
+  }
+  h5 {
+    font-size: 15px;
+  }
+}

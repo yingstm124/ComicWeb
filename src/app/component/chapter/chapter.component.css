@@ -1,0 +1,198 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  color: rgb(76, 59, 136);
+}
+
+h4 {
+  padding: 2%;
+}
+
+#sub1 ,#like1 {
+  color:rgb(201, 30, 201);
+}
+
+#sub2 , #like2{
+  color:black;
+}
+
+
+
+.header{
+  background: whitesmoke;
+  height: 240px;
+  padding: 0%;
+  position: relative;
+  background-image: url(https://365manga.com/wp-content/themes/madara/images/bg-search.jpg);
+  
+}
+
+.header .cover-area  {
+  text-align: center;
+}
+
+.header .cover-area .cover-area-item {
+  position: absolute;
+  left: 10%;
+}
+
+.header .cover-area .cover-area-item img{
+  width: 100%;
+}
+.header .cover-area .cover-area-item2 img{
+  width: 40%;
+  display: none;
+}
+
+.header .header-detail{
+  position: absolute;
+}
+
+.fa-thumbs-up:hover{
+  color: red;
+}
+.fa-bookmark:hover {
+  color: rgb(195, 0, 255);
+}
+
+/*------------ description area ----------*/
+
+.description-area {
+  text-align: center;
+  padding: 0% 10% 2% 10%;  
+}
+
+/*-------------- top nav content area ------------*/
+.top-nav-content {
+  height: 40px;
+  margin: 0% 10% 0% 10%;
+  color: white;
+  padding-top: 1%;
+  justify-content: center;
+}
+
+/*-------------- content area ------------*/
+.content-area {
+  display: flex;
+  justify-content: space-between;
+  padding: 0% 10% 0% 10%;
+}
+
+/*-------------- chapter area ------------*/
+
+.chapter-list-area {
+  width: 75%;
+}
+
+.chapter-list-area .topic-chapter{
+  background-image: url(https://365manga.com/wp-content/themes/madara/images/bg-search.jpg);
+  text-align: center;
+}
+
+
+.chapter-list-area .mat-list a .mat-list-item:hover {
+  background: rgba(95, 113, 148, 0.11);
+}
+
+.chapter-list-area .mat-list .mat-list-item .chapter-list-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0% 0% 0% 10%;
+}
+.chapter-list-area .mat-list .mat-list-item .chapter-list-item img{
+  width:  35%;
+}
+
+/*-------------- recommend area ------------*/
+.recommend-area {
+  width: 40%;
+  padding: 0% 0% 0% 5%;
+  text-align: center;
+}
+.recommend-area .topic{
+  background-image: url(https://365manga.com/wp-content/themes/madara/images/bg-search.jpg);
+  text-align: center;
+  margin-bottom: 0px; 
+  height: 50px;
+}
+.recommend-area .rec-detail  {
+  width: 20%;
+  padding-bottom: 100px;
+}
+.recommend-area .rec-detail :hover {
+  background: rgba(95, 113, 148, 0.11);
+}
+.recommend-area .rec-detail .cover {
+  position: absolute;
+  padding-left: 140px;
+}
+.recommend-area .rec-detail .detail {
+  position: absolute;
+  padding-left: 2%;
+}
+img {
+  width: 100px;
+}
+
+/*-------------------------------------------*/
+@media only screen and (max-width: 600px){
+  .header{
+    font-size: 80%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    height: 290px;
+  }
+  .header .cover-area .cover-area-item img{
+    display: none;
+  }
+  .header .cover-area .cover-area-item2 img{
+    display: inline-block;
+    border: 1px solid black;
+  }
+  h4{
+    font-size: 100%;
+    padding: 6px;
+  }
+
+
+  .content-area {
+    padding: 0%;
+    display: block;
+  }
+  .chapter-list-area {
+    text-align: left;
+    width: 100%;
+    margin: 0% 0% 0% 0%;
+  }
+  .chapter-list-area .mat-list .mat-list-item .chapter-list-item img{
+    width:  35%;
+    padding: 0;
+  }
+
+  .recommend-area {
+    width: 100%;
+    padding: 0% 0% 0% 0%;
+    text-align: center;
+  }
+  .recommend-area .topic{
+    margin-bottom: 0%;
+  }
+  .recommend-area .rec-detail  {
+    width: 100%;
+  }
+  .recommend-area .rec-detail .cover {
+    padding-left: 65%;
+  }
+  .recommend-area .rec-detail .detail {
+    position: absolute;
+    padding-left: 10%;
+  }
+
+    
+
+}
+

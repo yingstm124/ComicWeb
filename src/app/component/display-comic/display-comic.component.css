@@ -1,0 +1,76 @@
+.content {
+  display: block;
+  height: 200px;
+  width: 200px;
+  text-align: left;
+}
+
+.content .cover {
+  position: absolute;
+}
+.content .cover img{
+  width: 100%;
+}
+.content .detail {
+  position: absolute;
+  padding-top: 5%;
+  padding-left: 10%;
+}
+.content .sub {
+  position: absolute;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-left: 5%;
+  margin-top: 80%;
+  background: rgb(236, 236, 238);
+  border-radius: 20px;
+} 
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition:  0.7s ease;
+  background-color: rgb(120, 108, 159);
+}
+
+.text { 
+  color: white;
+  font-size: 70%;
+  left: 2%;
+  right: 2%;
+  top: 2%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.content:hover .overlay {
+  opacity: 1;
+}
+
+
+@media only screen and (max-width: 600px){
+  .content {
+    width: 100px;
+    height: 100px;
+  }
+  h5 {
+    font-size: 14px;
+  }
+  .fa-user, .fa-heart{
+    font-size: 10px;
+  }
+  .sub {
+    margin-top: 20px; 
+  }
+
+
+}
+
+
+

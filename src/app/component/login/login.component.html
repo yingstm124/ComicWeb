@@ -1,0 +1,27 @@
+<div class="container">
+
+  <h3>Login</h3>
+  <form [formGroup]="loginform">
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input 
+        type="email"
+        matInput
+        formControlName="Email"
+        [(ngModel)]="email"
+        placeholder="sutimar@example.com">
+    </mat-form-field><br>
+
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input 
+        type="password"
+        matInput
+        formControlName="Password"
+        [(ngModel)]="password">
+    </mat-form-field><br>
+
+    <button mat-raised-button type="sub" (click)=Login()> Submit </button>
+  
+  </form>
+</div>

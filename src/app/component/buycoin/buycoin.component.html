@@ -1,0 +1,67 @@
+
+<div class="header">
+  <h3>Coins</h3>
+  <h4>คุณ {{username}}</h4> 
+  ยอดคงเหลือ:  
+  <span>{{total_coins}}</span>
+</div>
+
+<mat-divider></mat-divider>
+
+<div class="content">
+  <mat-tab-group mat-align-tabs="center" animationDuration="0ms">
+
+<!------------ เติม coins  --------------->
+    <mat-tab label="เติม coins">
+      <mat-list>
+        <mat-list-item *ngFor="let bc of buycoins_lst">
+          <div class="lst-area" *ngFor="let history of historys">
+            <div class="coin-area"> <i class="fas fa-dollar-sign"></i>
+              {{bc.coin}} coins
+            </div>
+            <div class="btn-area">
+              <button mat-stroked-button (click)=buycoin(bc,history,c)>
+                <i class="fa fa-cart-plus"></i>
+                {{ bc.price | currency:'THB'}}
+              </button>
+            </div>
+          </div>
+        </mat-list-item>
+        <mat-divider></mat-divider> 
+
+      </mat-list>
+    </mat-tab>
+
+<!------------ ประวัติการเติม --------------->
+    <mat-tab label="ประวัติการเติม coins" >
+
+      <mat-list *ngFor="let h of his ; index as i" class="hs-area" >
+
+        <mat-list-item>
+          <div class="lst-area">
+            <p>
+              <i class="far fa-clock"></i>
+              Date : {{h.date.toDate() | date:'yyyy/MM/dd'}}
+            </p>
+
+            <p> 
+              <i class="fas fa-dollar-sign"></i> 
+              {{h.coins}} 
+            </p>
+            
+          </div>
+          <mat-divider></mat-divider> 
+          
+        </mat-list-item>
+
+      </mat-list>
+      
+    
+    </mat-tab>
+
+  </mat-tab-group>
+
+</div>
+
+
+

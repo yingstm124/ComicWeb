@@ -1,0 +1,114 @@
+<div class="header">
+  
+  <div class="cover-area">
+    <div class="cover-area-item">
+      <img src={{comic.coverDetail}}>
+    </div>
+    <span>
+      <a mat-icon-button (click)=AddMyList()>
+        <span *ngIf="display_sub">
+          <i class="fa fa-bookmark" id="sub1"></i>
+        </span>
+        <span *ngIf="!display_sub">
+          <i class="fa fa-bookmark" id="sub2"></i>
+        </span>
+      </a> subscribe
+    </span>
+    <span>
+      <a mat-icon-button (click)=like()>
+        <span *ngIf="display_like">
+          <i class="fa fa-thumbs-up" id="like1"></i>
+        </span>
+        <span *ngIf="!display_like">
+          <i class="fa fa-thumbs-up" id="like2"></i>
+        </span>
+      </a> Like
+    </span>
+    <div class="cover-area-item2">
+      <img src={{comic.coverImg}}>
+    </div>
+    <h3>{{comic.name}}</h3>
+    <p>Author: {{comic.author}}</p>
+    Like : {{comic_votenum}} <br>
+    <i class="fa fa-user"></i> {{comic_subnum}}
+  </div>
+ 
+</div>
+
+<div class="description-area">
+  <br>
+  <h4>เนื้อเรื่องย่อ</h4>
+  <mat-divider></mat-divider>
+  <p>{{comic.description}}</p>
+</div>
+
+<div class="top-nav-content">
+  <h4>
+    <i class="fa fa-book"></i>
+    Reading......
+  </h4>
+</div>
+
+<div class="content-area">
+  <div class="chapter-list-area" >
+    <div class="topic-chapter">
+      <h4>Chapter Lists</h4>
+    </div>
+    <mat-list *ngFor="let cover of coverChap ; index as i">
+      <div *ngIf="i <= coverChap.length - lock">
+        <a [routerLink]="['/currentChapter',i]">
+          <mat-list-item>
+            <div class="chapter-list-item">
+              <p matLine>
+                ep. {{i}}
+              </p>
+              <p matLine>
+                <img src={{cover}}>
+              </p>
+            </div>
+          </mat-list-item>
+        </a>
+        <mat-divider></mat-divider>
+      </div>
+      <div *ngIf="i > coverChap.length - lock">
+        <a [routerLink]="['/currentChapterLock']">
+          <mat-list-item>
+            <div class="chapter-list-item">
+              <p matLine>
+                ep. {{i}} LOCK!
+              </p>
+              <p matLine>
+                <img src={{cover}}>
+              </p>
+            </div>
+          </mat-list-item>
+        </a>
+        <mat-divider></mat-divider>
+      </div>
+    
+    </mat-list>
+  </div>
+
+  <div class="recommend-area">
+    <div class="topic">
+      <h4>Recommend</h4>
+    </div>
+    <div *ngFor="let rec of recommend">
+      <a (click)=selectComic(rec)>
+        <mat-list>
+            <div class="rec-detail" matLine>
+              <div class="cover" matLine>
+                <img src={{rec.coverImg}} matLine>
+              </div>
+              <div class="detail" matLine>
+                <h5 matLine>{{rec.name}}</h5>
+              </div>
+            </div>
+            <mat-divider></mat-divider>
+        </mat-list>
+      </a>
+    </div>
+  </div>
+</div>
+
+
