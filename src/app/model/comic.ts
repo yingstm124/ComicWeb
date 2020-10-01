@@ -2,13 +2,12 @@ export class Comic {
   id: string;
   name: string;
   coverImg: string;
-  coverDetail:string;
+  coverDetail: string;
   vote_list: string[];
-  votenum:number;
+  votenum: number;
   author: string;
   genre: string;
   description: string;
-  sub_num:number;
+  sub_num: number;
   sub_list: string[];
 }
-

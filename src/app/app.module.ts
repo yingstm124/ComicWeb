@@ -37,22 +37,19 @@ import { AngularFireAuth } from '@angular/fire/auth';
 // ---------------------service
 import { ComicService } from './service/comic.service';
 import { SubscribeService } from './service/subscribe.service';
-import { BuycoinService  } from './service/buycoin.service';
+import { BuycoinService } from './service/buycoin.service';
 import { UserService } from './service/user.service';
 import { PostService } from './service/post.service';
 
-
 // ---------------------guard, pipe
 import { AuthGuard } from './auth.guard';
-import { ReadComicGuard  } from './read-comic.guard';
+import { ReadComicGuard } from './read-comic.guard';
 import { canActivate } from '@angular/fire/auth-guard';
 import { TimeAgoPipe } from 'time-ago-pipe';
 
-
-
 @NgModule({
-  imports:      [ 
-    BrowserModule, 
+  imports: [
+    BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     AppMaterialModule,
@@ -66,25 +63,23 @@ import { TimeAgoPipe } from 'time-ago-pipe';
     FontAwesomeModule,
     FlexLayoutModule,
     AngularFireStorageModule,
-    RouterModule.forRoot(
-    [
-      { path: '' , component:  HomeComponent },
-      { path: 'app' , component: AppComponent },
-      { path: 'mylist', component:  MylistComponent, canActivate:[AuthGuard]},
-      { path: 'buycoin', component:  BuycoinComponent, canActivate:[AuthGuard] },
+    RouterModule.forRoot([
+      { path: '', component: HomeComponent },
+      { path: 'app', component: AppComponent },
+      { path: 'mylist', component: MylistComponent, canActivate: [AuthGuard] },
+      { path: 'buycoin', component: BuycoinComponent, canActivate: [AuthGuard] },
       { path: 'chapter', component: ChapterComponent },
-      { path: 'currentChapter', component: CurrentChapterComponent},
-      { path: 'currentChapter/:chapterId', component: CurrentChapterComponent},
-      { path:'currentChapterLock', component: CurrentChapterLockComponent, canActivate:[ReadComicGuard]},
-      { path: 'login', component: LoginComponent},
-      { path: 'register', component: RegisterComponent }
-    ]
-    ), 
+      { path: 'currentChapter', component: CurrentChapterComponent },
+      { path: 'currentChapter/:chapterId', component: CurrentChapterComponent },
+      { path: 'currentChapterLock', component: CurrentChapterLockComponent, canActivate: [ReadComicGuard] },
+      { path: 'login', component: LoginComponent },
+      { path: 'register', component: RegisterComponent },
+    ]),
   ],
 
   // canActivate:[AuthGuard]
 
-  declarations: [ 
+  declarations: [
     AppComponent,
     HomeComponent,
     MylistComponent,
@@ -94,17 +89,14 @@ import { TimeAgoPipe } from 'time-ago-pipe';
     ComicListsComponent,
     CurrentChapterComponent,
     LoginComponent,
-    RegisterComponent, 
+    RegisterComponent,
     DisplayPostListComponent,
     TimeAgoPipe,
     DisplayComicSearchComponent,
     CurrentChapterLockComponent,
-
   ],
 
-  bootstrap:    [ 
-    AppComponent,
-  ],
+  bootstrap: [AppComponent],
 
   providers: [
     ComicService,
@@ -115,9 +107,7 @@ import { TimeAgoPipe } from 'time-ago-pipe';
     UserService,
     AngularFireAuth,
     AuthGuard,
-    ReadComicGuard
-  ]
-
-  
+    ReadComicGuard,
+  ],
 })
-export class AppModule { }
+export class AppModule {}

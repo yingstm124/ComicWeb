@@ -5,29 +5,20 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 
 @Injectable()
-
 export class AuthGuard implements CanActivate {
-
   isLogined;
 
-  constructor(
-    private afAuth: AngularFireAuth,
-    private route: Router,
-  ){
-
-  }
-  
+  constructor(private afAuth: AngularFireAuth, private route: Router) {}
 
   canActivate(
     next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-
-    return Observable.create(obs => {
-      this.afAuth.auth.onAuthStateChanged(user => {
+    state: RouterStateSnapshot,
+  ): Observable<boolean> | Promise<boolean> | boolean {
+    return Observable.create((obs) => {
+      this.afAuth.auth.onAuthStateChanged((user) => {
         if (user) {
           this.isLogined = true;
-        }
-        else {
+        } else {
           this.isLogined = false;
           this.route.navigate(['login']);
         }
@@ -36,7 +27,5 @@ export class AuthGuard implements CanActivate {
     });
   }
 
-  ngOnInit(){}
-
-
+  ngOnInit() {}
 }

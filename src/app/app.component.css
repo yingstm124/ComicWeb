@@ -1,11 +1,8 @@
-*{
+* {
   font-size: 100%;
-  
 }
 
-
-
-.topnav{
+.topnav {
   display: block;
   height: 200px;
   padding-top: 10px;
@@ -13,14 +10,12 @@
   padding-right: 100px;
   margin-bottom: 50px;
   background: rgb(255, 255, 255);
-  
 }
 
-.topnav .home{
+.topnav .home {
   font-size: 30px;
   letter-spacing: 2px;
 }
-
 
 .topnav .home2 {
   display: none;
@@ -29,7 +24,6 @@
   font-size: 28px;
   letter-spacing: 3px;
 }
-
 
 .topnav ul {
   list-style-type: none;
@@ -47,7 +41,7 @@
   text-decoration: none;
 }
 
-.topnav ul li a:hover{
+.topnav ul li a:hover {
   color: red;
 }
 
@@ -55,24 +49,21 @@
   display: none;
 }
 
-.profile-area{
+.profile-area {
   text-align: center;
 }
-
-
 
 .app-container {
   padding-top: 0%;
 }
 
 @media only screen and (max-width: 600px) {
-
-  .topnav{
+  .topnav {
     display: block;
     height: 90px;
     padding-left: 2%;
     padding-right: 2%;
-    padding-bottom: 10%; 
+    padding-bottom: 10%;
     border-bottom: 0px solid whitesmoke;
   }
   .topnav ul li {
@@ -81,7 +72,7 @@
   }
 
   .side-nav {
-    display:none;
+    display: none;
   }
 
   .topnav .home {
@@ -93,41 +84,40 @@
     display: block;
   }
 
-  .topnav .home2 .btn-side{
+  .topnav .home2 .btn-side {
     font-size: 60%;
     letter-spacing: 1px;
   }
 
-  .topnav .home2 a{
+  .topnav .home2 a {
     text-align: center;
     background: rgb(255, 255, 255);
   }
 
   .topnav ul {
     list-style-type: none;
-
   }
 
   .topnav ul li {
     float: left;
-    margin-top: 4%; 
+    margin-top: 4%;
   }
 
-  .topnav li a .topic{
+  .topnav li a .topic {
     display: none;
   }
 
-  .topnav li a span i{
+  .topnav li a span i {
     display: block;
     font-size: 20px;
   }
 
-  .btn-side .mat-raised-button:hover{
+  .btn-side .mat-raised-button:hover {
     background: rgb(76, 59, 136);
-    color:white;
+    color: white;
   }
 
-  .profile-area{
+  .profile-area {
     font-size: 50%;
     padding-right: 5%;
   }
@@ -135,6 +125,4 @@
   .app-container {
     background: white;
   }
-  
-  
 }

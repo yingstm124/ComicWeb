@@ -1,15 +1,14 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  
 }
-.genre-list{
-  margin:0%;
+.genre-list {
+  margin: 0%;
 }
 
 /* ------------ search bar area ------------ */
-.search-area{
+.search-area {
   padding-top: 30px;
   padding-right: 70px;
   height: 80px;
@@ -18,37 +17,37 @@
 
 #search-bar input {
   float: right;
-	outline: none;
+  outline: none;
 }
-#search-bar input[type=search] {
+#search-bar input[type='search'] {
   -webkit-appearance: textfield;
   font-size: 100%;
 }
-#search-bar input[type=search]:focus {
+#search-bar input[type='search']:focus {
   width: 95%;
 }
 
-#search-bar input[type=search] {
-	background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
-	border: solid 1px #ccc;
-	padding: 2px 2px 4px 32px;
-	width: 1%;
+#search-bar input[type='search'] {
+  background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+  border: solid 1px #ccc;
+  padding: 2px 2px 4px 32px;
+  width: 1%;
 
-	-moz-border-radius: 20em;
-	border-radius: 20em;
-	
-	-webkit-transition: all .5s;
-	-moz-transition: all .5s;
-	transition: all .5s;
+  -moz-border-radius: 20em;
+  border-radius: 20em;
+
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
 }
-#search-bar input[type=search]:focus {
-	width: 30%;
-	background-color: #fff;
-	border-color: #66CC75;
-	
-	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
-	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
-	box-shadow: 0 0 5px rgba(109,207,246,.5);
+#search-bar input[type='search']:focus {
+  width: 30%;
+  background-color: #fff;
+  border-color: #66cc75;
+
+  -webkit-box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
+  -moz-box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
+  box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
 }
 
 /*----- search area ----*/
@@ -64,11 +63,10 @@
   margin: 5%;
 }
 
-
 /*------------- banner ------------*/
 #slider {
   overflow: hidden;
-  background-image: url("https://webtoons-static.pstatic.net/image/pc/home_bg001.jpg");
+  background-image: url('https://webtoons-static.pstatic.net/image/pc/home_bg001.jpg');
 }
 #slider figure {
   position: relative;
@@ -78,52 +76,52 @@
   animation: 15s slide infinite;
   animation-delay: 3s;
 }
-#slider figure img{
+#slider figure img {
   float: left;
   padding-left: 5%;
   width: 20%;
 }
 @keyframes slide {
-  0%{
+  0% {
     left: 0%;
   }
-  10%{
+  10% {
     left: 0%;
   }
-  20%{
+  20% {
     left: -80%;
   }
-  25%{
+  25% {
     left: -80%;
   }
-  45%{
+  45% {
     left: -160%;
   }
-  50%{
+  50% {
     left: -160%;
   }
-  70%{
-    left: -240%; 
-  }
-  75%{
+  70% {
     left: -240%;
   }
-  95%{
-    left: -320%;
-  }
-  100%{
-    left: -320%;
-  }
-  100%{
+  75% {
     left: -240%;
   }
-  100%{
+  95% {
+    left: -320%;
+  }
+  100% {
+    left: -320%;
+  }
+  100% {
+    left: -240%;
+  }
+  100% {
     left: -160%;
   }
-  100%{
+  100% {
     left: -80%;
   }
-  100%{
+  100% {
     left: 0%;
   }
 }
@@ -139,24 +137,21 @@
   margin-right: 10%;
 }
 
-
-
 @media only screen and (max-width: 600px) {
-
-  .mat-tab-group{
-    padding:0;
+  .mat-tab-group {
+    padding: 0;
     font-size: 5%;
   }
 
-  .genre-list{
+  .genre-list {
     margin-left: 0;
     margin-right: 0;
-    margin-top:2%;
+    margin-top: 2%;
   }
   /* ---------- searching-area --------- */
-  #search-bar input[type=search]:focus {
+  #search-bar input[type='search']:focus {
     width: 80%;
- } 
+  }
   .searching {
     margin-left: 0%;
     margin-right: 0%;
@@ -164,6 +159,4 @@
   .search-container {
     justify-content: center;
   }
-  
-  
 }

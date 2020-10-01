@@ -1,24 +1,21 @@
 <div class="content">
-  name : {{comment.username}} 
-  <em style="font-size:40%">{{comment.date.seconds*1000 | timeAgo}}</em>
+  name : {{ comment.username }}
+  <em style="font-size: 40%">{{ comment.date.seconds * 1000 | timeAgo }}</em>
 
-  <a mat-icon-button (click)=deletepost() *ngIf="canEdit">
+  <a mat-icon-button (click)="deletepost()" *ngIf="canEdit">
     <i class="fa fa-trash"></i>
   </a>
-    
-  <br>
-  <p>{{comment.comment}}</p>
 
-  <a mat-icon-button (click)=likepost()>
+  <br />
+  <p>{{ comment.comment }}</p>
+
+  <a mat-icon-button (click)="likepost()">
     <span *ngIf="like_display">
       <i class="fa fa-thumbs-up" id="like1"></i>
     </span>
     <span *ngIf="!like_display">
       <i class="fa fa-thumbs-up" id="like2"></i>
     </span>
-    
   </a>
-  {{like_num}}
-
+  {{ like_num }}
 </div>
-

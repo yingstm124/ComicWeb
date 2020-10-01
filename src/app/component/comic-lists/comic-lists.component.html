@@ -1,34 +1,29 @@
 <div class="container">
   <div class="comic-list">
     <div class="display-comic" *ngFor="let comic of comics; index as i">
-      
-      <div *ngIf=" i == 1">
-        <div (click)=selectComic(comic)>
+      <div *ngIf="i == 1">
+        <div (click)="selectComic(comic)">
           <div class="comic-sp">
             <div>
-              <img src={{comic.coverImg}}> 
+              <img src="{{ comic.coverImg }}" />
             </div>
             <div class="detail">
-              <h5>{{comic.name}}</h5>
-              <i class="fas fa-heart"></i> {{comic.votenum}}<br>
-              <div class="sub">
-                <i class="fas fa-user"></i> {{comic.subnum}}
-              </div>
+              <h5>{{ comic.name }}</h5>
+              <i class="fas fa-heart"></i> {{ comic.votenum }}<br />
+              <div class="sub"><i class="fas fa-user"></i> {{ comic.subnum }}</div>
             </div>
             <div class="overlay">
-              <div class="text">{{comic.description}}</div>
+              <div class="text">{{ comic.description }}</div>
             </div>
           </div>
         </div>
       </div>
 
-      <div *ngIf=" i != 1">
-        <div (click)=selectComic(comic)>
+      <div *ngIf="i != 1">
+        <div (click)="selectComic(comic)">
           <app-display-comic [comic]="comic"></app-display-comic>
         </div>
-        
       </div>
     </div>
   </div>
-
 </div>

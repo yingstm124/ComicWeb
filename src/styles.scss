@@ -4,24 +4,22 @@
 
 @include mat-core();
 $primary: mat-palette($mat-indigo);
-$accent:  mat-palette($mat-pink, A200, A100, A400);
-$warn:    mat-palette($mat-red, A700);
+$accent: mat-palette($mat-pink, A200, A100, A400);
+$warn: mat-palette($mat-red, A700);
 $theme: mat-light-theme($primary, $accent);
 @include angular-material-theme($theme);
 .m2app-dark {
   $primary: mat-palette($mat-pink, 700, 500, 900);
-  $accent:  mat-palette($mat-blue-grey, A200, A100, A400);
-  $warn:    mat-palette($mat-red, A700);
+  $accent: mat-palette($mat-blue-grey, A200, A100, A400);
+  $warn: mat-palette($mat-red, A700);
 
-  $theme:   mat-dark-theme($primary, $accent, $warn);
+  $theme: mat-dark-theme($primary, $accent, $warn);
 
   @include angular-material-theme($theme);
 }
 
-
 // font style
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital@0;1&display=swap');
-
 
 * {
   font-family: 'Kanit', sans-serif;
@@ -39,12 +37,11 @@ a {
   text-decoration: none;
 }
 
-
 h3 {
   font-size: 170%;
 }
 h2 {
-  font-size: 40px; 
+  font-size: 40px;
 }
 
 h5 {

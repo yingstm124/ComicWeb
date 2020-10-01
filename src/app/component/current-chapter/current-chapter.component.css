@@ -1,5 +1,4 @@
-
-img{
+img {
   width: 80%;
 }
 
@@ -8,8 +7,6 @@ img{
   height: 10px;
   background: rgb(76, 59, 136);
 }
-
-
 
 /*------- navigation ------*/
 
@@ -28,14 +25,13 @@ img{
   margin-right: 10%;
 }
 
-
 /*-----content-----*/
 .content {
   text-align: center;
 }
 
 /*------ post ------*/
-.post-area{
+.post-area {
   text-align: left;
   padding: 5% 10% 0% 10%;
 }
@@ -45,7 +41,7 @@ img{
   padding: 2%;
 }
 
-.post-btn-area{
+.post-btn-area {
   text-align: right;
 }
 
@@ -63,14 +59,12 @@ img{
 .comment-area .hotcomment .hc_list {
   margin: 0% 5% 0% 5%;
 }
-.comment-area .comment .nc_list{
+.comment-area .comment .nc_list {
   margin: 0% 5% 0% 5%;
 }
 
-
-
-@media only screen and (max-width: 600px){
-  img{
+@media only screen and (max-width: 600px) {
+  img {
     width: 95%;
   }
   .comment-area {
@@ -81,7 +75,7 @@ img{
   .comment-area .hotcomment .hc_list {
     margin: 0% 2% 0% 2%;
   }
-  .comment-area .comment .nc_list{
+  .comment-area .comment .nc_list {
     margin: 0% 2% 0% 2%;
   }
 
@@ -95,5 +89,4 @@ img{
   .navigation .btn {
     margin-right: 1%;
   }
-
 }
