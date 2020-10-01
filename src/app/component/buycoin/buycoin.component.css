@@ -1,4 +1,4 @@
-*{
+* {
   text-align: center;
 }
 .header {
@@ -11,19 +11,19 @@
 .header h4 {
   letter-spacing: 3px;
 }
-.content{
+.content {
   margin-left: 15%;
-  margin-right: 15%; 
+  margin-right: 15%;
 }
 
-
-.mat-list-item .lst-area , .hs-area{
+.mat-list-item .lst-area,
+.hs-area {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-.mat-list .lst-area{
+.mat-list .lst-area {
   padding-left: 25%;
   padding-right: 25%;
 }
@@ -34,19 +34,17 @@
 }
 
 @media only screen and (max-width: 600px) {
-
   .header {
     padding: 10%;
   }
 
-  .mat-list .lst-area{
+  .mat-list .lst-area {
     padding-left: 0%;
     padding-right: 0%;
   }
 
-  .content{
+  .content {
     margin-left: 2%;
-    margin-right: 2%; 
+    margin-right: 2%;
   }
-
 }

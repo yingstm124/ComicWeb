@@ -6,17 +6,16 @@ import { Comic } from '../../model/comic';
 import { Post } from '../../model/post';
 import { Chapters } from '../../model/chapter';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { FormControl, FormBuilder, Validators, FormGroup} from '@angular/forms';
+import { FormControl, FormBuilder, Validators, FormGroup } from '@angular/forms';
 import * as firebase from 'firebase/app';
-import "firebase/storage";
+import 'firebase/storage';
 
 @Component({
   selector: 'app-current-chapter',
   templateUrl: './current-chapter.component.html',
-  styleUrls: ['./current-chapter.component.css']
+  styleUrls: ['./current-chapter.component.css'],
 })
 export class CurrentChapterComponent implements OnInit {
-
   chapterId;
   chapterLock;
 
@@ -25,18 +24,15 @@ export class CurrentChapterComponent implements OnInit {
   chapter_name;
   chapters;
 
-
-
   Hotcomment;
   Newcomment;
 
   comic: Comic;
-  name:string;
+  name: string;
 
   msgForm: FormGroup;
-  msg:string;
+  msg: string;
 
-  
   constructor(
     private comicService: ComicService,
     private route: Router,
@@ -46,105 +42,81 @@ export class CurrentChapterComponent implements OnInit {
     private formBuilder: FormBuilder,
   ) {
     this.name = this.userService.getCurrentUserName();
-    this.comic = this.comicService.getCurrentComic(); 
+    this.comic = this.comicService.getCurrentComic();
   }
 
   ngOnInit() {
-
-    this.act_route.paramMap.subscribe(params => {
+    this.act_route.paramMap.subscribe((params) => {
       this.chapterId = +params.get('chapterId');
-      console.log("paramap " ,this.chapterId);
+      console.log('paramap ', this.chapterId);
 
-      this.comicService.getChapter(this.comic.name).subscribe(val => {
-      this.chapters = val.map(
-        e => {
-          this.display_chapter = e.payload.doc.data()["chapter"+this.chapterId];
-          this.length_chapter  = e.payload.doc.data()["cover"];
+      this.comicService.getChapter(this.comic.name).subscribe((val) => {
+        this.chapters = val.map((e) => {
+          this.display_chapter = e.payload.doc.data()['chapter' + this.chapterId];
+          this.length_chapter = e.payload.doc.data()['cover'];
           this.chapterLock = this.length_chapter.length - 1;
-          this.chapter_name = e.payload.doc.data()["name"];
+          this.chapter_name = e.payload.doc.data()['name'];
 
           return {
             id: e.payload.doc.id,
-            ...e.payload.doc.data()
-          } as Chapters
-        })
+            ...e.payload.doc.data(),
+          } as Chapters;
+        });
       });
     });
 
-    
-
     this.msgForm = this.formBuilder.group({
-      'Msg': [this.msg, []]
+      Msg: [this.msg, []],
     });
 
-    
     this.getHotComment();
     this.getNewComment();
-
   }
 
-
-  getHotComment(){
-    this.postService.getHotPost().subscribe(val => {
-      this.Hotcomment = val.map(
-        e => {
-          return {
-            id: e.payload.doc.id,
-            ...e.payload.doc.data()
-          } as Post
-        }
-      )
+  getHotComment() {
+    this.postService.getHotPost().subscribe((val) => {
+      this.Hotcomment = val.map((e) => {
+        return {
+          id: e.payload.doc.id,
+          ...e.payload.doc.data(),
+        } as Post;
+      });
     });
   }
 
-  getNewComment(){
-    this.postService.getPost().subscribe( val => {
-      this.Newcomment = val.map(
-        e => {
-          return {
-            id: e.payload.doc.id,
-            ...e.payload.doc.data()
-          } as Post
-        }
-      )
+  getNewComment() {
+    this.postService.getPost().subscribe((val) => {
+      this.Newcomment = val.map((e) => {
+        return {
+          id: e.payload.doc.id,
+          ...e.payload.doc.data(),
+        } as Post;
+      });
     });
   }
-  
 
-  Back(){
+  Back() {
     this.chapterId -= 1;
-    console.log("Back ",this.chapterId);
+    console.log('Back ', this.chapterId);
     this.route.navigate(['/currentChapter', this.chapterId]);
-    
   }
 
-  Next(){
-
+  Next() {
     this.chapterId += 1;
 
-    if(this.chapterId == this.chapterLock){
-      this.route.navigate(['/currentChapterLock']);      
-    }
-    else {
-      console.log("Next ",this.chapterId);
+    if (this.chapterId == this.chapterLock) {
+      this.route.navigate(['/currentChapterLock']);
+    } else {
+      console.log('Next ', this.chapterId);
       this.route.navigate(['/currentChapter', this.chapterId]);
     }
-    
-  
   }
 
-  post(){
-    if(confirm("Are you sure to post")){
-      this.postService.addPost(
-        this.name, this.msgForm.value.Msg
-      );
+  post() {
+    if (confirm('Are you sure to post')) {
+      this.postService.addPost(this.name, this.msgForm.value.Msg);
 
-      this.msg = "";
-      }
-    
-  
+      this.msg = '';
+    }
   }
-
-
-
 }

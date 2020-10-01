@@ -1,49 +1,42 @@
-
-
 <div class="navigation">
-
   <div class="topic">
-    <a mat-raised-button color="accent" routerLink="/chapter">{{chapter_name}}</a>
+    <a mat-raised-button color="accent" routerLink="/chapter">{{ chapter_name }}</a>
   </div>
 
   <div class="btn">
-    <button (click)=Back()  *ngIf="chapterId > 0" mat-raised-button color="primary">
+    <button (click)="Back()" *ngIf="chapterId > 0" mat-raised-button color="primary">
       <i class="fa fa-caret-left"></i> Back
     </button>
-    {{chapterId}}
-    <button (click)=Next() *ngIf="chapterId < length_chapter.length -1" mat-raised-button color="primary">
+    {{ chapterId }}
+    <button (click)="Next()" *ngIf="chapterId < length_chapter.length - 1" mat-raised-button color="primary">
       Next <i class="fa fa-caret-right"></i>
     </button>
   </div>
-
 </div>
-
 
 <!--------------------- comic ----------------->
 
 <div class="content">
   <div *ngFor="let dc of display_chapter">
-    <img src={{dc}}>
+    <img src="{{ dc }}" />
   </div>
 </div>
 
 <!-------------------bottom navigation------------------->
 <div class="navigation">
-
   <div class="topic">
-    <a mat-raised-button color="accent" routerLink="/chapter">{{chapter_name}}</a>
+    <a mat-raised-button color="accent" routerLink="/chapter">{{ chapter_name }}</a>
   </div>
 
   <div class="btn">
-    <button (click)=Back()  *ngIf="chapterId > 0" mat-raised-button color="primary">
+    <button (click)="Back()" *ngIf="chapterId > 0" mat-raised-button color="primary">
       <i class="fa fa-caret-left"></i> Back
     </button>
-    {{chapterId}}
-    <button (click)=Next() *ngIf="chapterId < length_chapter.length - 1" mat-raised-button color="primary">
+    {{ chapterId }}
+    <button (click)="Next()" *ngIf="chapterId < length_chapter.length - 1" mat-raised-button color="primary">
       Next <i class="fa fa-caret-right"></i>
     </button>
   </div>
-
 </div>
 
 <!------------------post area----------------->
@@ -51,24 +44,25 @@
 <div class="post-area">
   <h3>Post Comment</h3>
   <mat-divider></mat-divider>
-  <h4>Username: {{name}}</h4>
+  <h4>Username: {{ name }}</h4>
 
   <div class="post-form">
     <form [formGroup]="msgForm">
       <mat-form-field style="width: 100%" appearance="fill">
         <mat-label>Comment</mat-label>
-          <textarea
-            id="comment"
-            type="text"
-            formControlName="Msg"
-            [(ngModel)]="msg"
-            matInput 
-            placeholder="please comment ">
-          </textarea>
+        <textarea
+          id="comment"
+          type="text"
+          formControlName="Msg"
+          [(ngModel)]="msg"
+          matInput
+          placeholder="please comment "
+        >
+        </textarea>
       </mat-form-field>
     </form>
     <div class="post-btn-area">
-      <button mat-flat-button color="primary" (click)=post()>post</button>
+      <button mat-flat-button color="primary" (click)="post()">post</button>
     </div>
   </div>
 </div>
@@ -77,7 +71,6 @@
 <!------------------comment area----------------->
 
 <div class="comment-area">
-
   <div class="comment">
     <div class="topic">
       <h4>Comment</h4>
@@ -88,7 +81,4 @@
       <mat-divider></mat-divider>
     </div>
   </div>
-
 </div>
-
-

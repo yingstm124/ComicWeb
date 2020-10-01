@@ -1,42 +1,32 @@
 <div class="topnav">
   <ul>
     <li class="home">
-      <a routerLink="/" >
+      <a routerLink="/">
         <i class="fa fa-book"></i>
-        <span class="topic">
-          Comic.Store
-        </span>
+        <span class="topic"> Comic.Store </span>
       </a>
     </li>
 
-<!----------- mobile layout -------------->
+    <!----------- mobile layout -------------->
     <div class="home2">
       <a routerLink="/">
         <i class="fa fa-book"></i>
-        <span>
-          Comic.Store
-        </span>
+        <span> Comic.Store </span>
       </a>
-      
-      <div style="float:right" *ngIf="isLoggedIn" class="btn-side">
-        <button class="logout" 
-          (click)=logout() 
-          mat-raised-button
-          color="warn">
+
+      <div style="float: right" *ngIf="isLoggedIn" class="btn-side">
+        <button class="logout" (click)="logout()" mat-raised-button color="warn">
           <span><i class="fas fa-sign-out-alt"></i></span>
           <span class="topic"> Logout</span>
         </button>
       </div>
 
-      <div style="float:right" *ngIf="!isLoggedIn" class="btn-side">
-        <button routerLink="/login" 
-          mat-raised-button
-          color="primary">
+      <div style="float: right" *ngIf="!isLoggedIn" class="btn-side">
+        <button routerLink="/login" mat-raised-button color="primary">
           <span><i class="fa fa-user"></i></span>
           <span class="topic"> Login</span>
         </button>
       </div>
-
     </div>
 
     <li>
@@ -44,7 +34,7 @@
         <span><i class="fa fa-cart-plus"></i></span>
         <span class="topic"> BuyCoins</span>
         <div class="line"></div>
-      </a>   
+      </a>
     </li>
 
     <li>
@@ -54,52 +44,37 @@
       </a>
     </li>
 
-    <li style="float:right" *ngIf="!isLoggedIn">
+    <li style="float: right" *ngIf="!isLoggedIn">
       <a routerLink="register" mat-button>
         <span><i class="fa fa-user-plus"></i></span>
         <span class="topic"> Register</span>
       </a>
     </li>
 
-    <li style="float:right" *ngIf="!isLoggedIn" class="side-nav">
-      <button routerLink="/login" 
-        mat-stroked-button
-        color="primary">
+    <li style="float: right" *ngIf="!isLoggedIn" class="side-nav">
+      <button routerLink="/login" mat-stroked-button color="primary">
         <span><i class="fa fa-user"></i></span>
         <span class="topic"> Login</span>
       </button>
     </li>
 
-    <li style="float:right" *ngIf="isLoggedIn" class="side-nav">
-      <button (click)=logout() 
-        mat-raised-button
-        color="warn">
-
+    <li style="float: right" *ngIf="isLoggedIn" class="side-nav">
+      <button (click)="logout()" mat-raised-button color="warn">
         <span><i class="fas fa-sign-out-alt"></i></span>
         <span class="topic"> Logout</span>
       </button>
     </li>
 
-<!------------------ user detail ------------------------------>
-    <li style="float:right" *ngIf="isLoggedIn" class="profile-area">
-      <i class="fa fa-user-circle" style="font-size: 20px"></i><br>
-      {{displayname}}<br>
-      <i class="fas fa-dollar-sign"></i> 
-      <span> {{total_coin}}</span>
+    <!------------------ user detail ------------------------------>
+    <li style="float: right" *ngIf="isLoggedIn" class="profile-area">
+      <i class="fa fa-user-circle" style="font-size: 20px"></i><br />
+      {{ displayname }}<br />
+      <i class="fas fa-dollar-sign"></i>
+      <span> {{ total_coin }}</span>
     </li>
   </ul>
-
 </div>
 
-
 <div class="app-container">
-    <router-outlet></router-outlet>
-</div> 
-
-
-
-
-
-
-
-
+  <router-outlet></router-outlet>
+</div>

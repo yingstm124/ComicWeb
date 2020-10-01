@@ -1,11 +1,10 @@
-
-.container .comic-list{
+.container .comic-list {
   margin: 0%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-.container .comic-list .display-comic{
+.container .comic-list .display-comic {
   position: relative;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin: 8px;
@@ -24,7 +23,7 @@
   padding-left: 5%;
   padding-top: 2%;
 }
-.container .comic-list .display-comic .comic-sp img{
+.container .comic-list .display-comic .comic-sp img {
   position: absolute;
   float: right;
 }
@@ -36,7 +35,6 @@
   padding-left: 8%;
 }
 
-
 .overlay {
   position: absolute;
   top: 0;
@@ -46,11 +44,11 @@
   height: 100%;
   width: 100%;
   opacity: 0;
-  transition:  0.7s ease;
+  transition: 0.7s ease;
   background-color: rgb(120, 108, 159);
 }
-.text{
-  color:white;
+.text {
+  color: white;
   font-size: 70%;
   left: 2%;
   right: 2%;
@@ -59,20 +57,19 @@
   overflow: hidden;
 }
 
-
 .container .comic-list .display-comic .comic-sp:hover .overlay {
   opacity: 1;
 }
 
-
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 600px) {
   h5 {
     font-size: 14px;
   }
-  .fa-heart, .fa-user{
+  .fa-heart,
+  .fa-user {
     font-size: 10px;
   }
-  .container .comic-list .display-comic{
+  .container .comic-list .display-comic {
     position: relative;
     box-shadow: 0px 0px 0px;
     margin: 2px;
@@ -84,7 +81,6 @@
     display: block;
     text-align: left;
     position: relative;
-
   }
   .container .comic-list .display-comic .comic-sp .detail {
     position: absolute;
@@ -92,7 +88,7 @@
     padding-left: 5%;
     padding-top: 2%;
   }
-  .container .comic-list .display-comic .comic-sp img{
+  .container .comic-list .display-comic .comic-sp img {
     position: absolute;
     width: 100px;
     height: 100px;
@@ -102,6 +98,4 @@
     margin: 15% 10% 0% 2%;
     padding-left: 8%;
   }
- 
 }
-

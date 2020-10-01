@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
@@ -11,26 +11,25 @@ h4 {
   padding: 2%;
 }
 
-#sub1 ,#like1 {
-  color:rgb(201, 30, 201);
+#sub1,
+#like1 {
+  color: rgb(201, 30, 201);
 }
 
-#sub2 , #like2{
-  color:black;
+#sub2,
+#like2 {
+  color: black;
 }
 
-
-
-.header{
+.header {
   background: whitesmoke;
   height: 240px;
   padding: 0%;
   position: relative;
   background-image: url(https://365manga.com/wp-content/themes/madara/images/bg-search.jpg);
-  
 }
 
-.header .cover-area  {
+.header .cover-area {
   text-align: center;
 }
 
@@ -39,19 +38,19 @@ h4 {
   left: 10%;
 }
 
-.header .cover-area .cover-area-item img{
+.header .cover-area .cover-area-item img {
   width: 100%;
 }
-.header .cover-area .cover-area-item2 img{
+.header .cover-area .cover-area-item2 img {
   width: 40%;
   display: none;
 }
 
-.header .header-detail{
+.header .header-detail {
   position: absolute;
 }
 
-.fa-thumbs-up:hover{
+.fa-thumbs-up:hover {
   color: red;
 }
 .fa-bookmark:hover {
@@ -62,7 +61,7 @@ h4 {
 
 .description-area {
   text-align: center;
-  padding: 0% 10% 2% 10%;  
+  padding: 0% 10% 2% 10%;
 }
 
 /*-------------- top nav content area ------------*/
@@ -87,11 +86,10 @@ h4 {
   width: 75%;
 }
 
-.chapter-list-area .topic-chapter{
+.chapter-list-area .topic-chapter {
   background-image: url(https://365manga.com/wp-content/themes/madara/images/bg-search.jpg);
   text-align: center;
 }
-
 
 .chapter-list-area .mat-list a .mat-list-item:hover {
   background: rgba(95, 113, 148, 0.11);
@@ -103,8 +101,8 @@ h4 {
   width: 100%;
   padding: 0% 0% 0% 10%;
 }
-.chapter-list-area .mat-list .mat-list-item .chapter-list-item img{
-  width:  35%;
+.chapter-list-area .mat-list .mat-list-item .chapter-list-item img {
+  width: 35%;
 }
 
 /*-------------- recommend area ------------*/
@@ -113,13 +111,13 @@ h4 {
   padding: 0% 0% 0% 5%;
   text-align: center;
 }
-.recommend-area .topic{
+.recommend-area .topic {
   background-image: url(https://365manga.com/wp-content/themes/madara/images/bg-search.jpg);
   text-align: center;
-  margin-bottom: 0px; 
+  margin-bottom: 0px;
   height: 50px;
 }
-.recommend-area .rec-detail  {
+.recommend-area .rec-detail {
   width: 20%;
   padding-bottom: 100px;
 }
@@ -139,25 +137,24 @@ img {
 }
 
 /*-------------------------------------------*/
-@media only screen and (max-width: 600px){
-  .header{
+@media only screen and (max-width: 600px) {
+  .header {
     font-size: 80%;
     padding-top: 5%;
     padding-bottom: 5%;
     height: 290px;
   }
-  .header .cover-area .cover-area-item img{
+  .header .cover-area .cover-area-item img {
     display: none;
   }
-  .header .cover-area .cover-area-item2 img{
+  .header .cover-area .cover-area-item2 img {
     display: inline-block;
     border: 1px solid black;
   }
-  h4{
+  h4 {
     font-size: 100%;
     padding: 6px;
   }
-
 
   .content-area {
     padding: 0%;
@@ -168,8 +165,8 @@ img {
     width: 100%;
     margin: 0% 0% 0% 0%;
   }
-  .chapter-list-area .mat-list .mat-list-item .chapter-list-item img{
-    width:  35%;
+  .chapter-list-area .mat-list .mat-list-item .chapter-list-item img {
+    width: 35%;
     padding: 0;
   }
 
@@ -178,10 +175,10 @@ img {
     padding: 0% 0% 0% 0%;
     text-align: center;
   }
-  .recommend-area .topic{
+  .recommend-area .topic {
     margin-bottom: 0%;
   }
-  .recommend-area .rec-detail  {
+  .recommend-area .rec-detail {
     width: 100%;
   }
   .recommend-area .rec-detail .cover {
@@ -191,8 +188,4 @@ img {
     position: absolute;
     padding-left: 10%;
   }
-
-    
-
 }
-

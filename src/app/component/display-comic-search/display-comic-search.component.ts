@@ -6,19 +6,13 @@ import { ComicService } from '../../service/comic.service';
 @Component({
   selector: 'app-display-comic-search',
   templateUrl: './display-comic-search.component.html',
-  styleUrls: ['./display-comic-search.component.css']
+  styleUrls: ['./display-comic-search.component.css'],
 })
 export class DisplayComicSearchComponent implements OnInit {
-
   @Input() comic: Comic;
 
-  constructor(
-    private route: Router,
-    //private comicService: ComicService,
-  ) { }
+  constructor(private route: Router) //private comicService: ComicService,
+  {}
 
-  ngOnInit() {
-
-  }
-
+  ngOnInit() {}
 }

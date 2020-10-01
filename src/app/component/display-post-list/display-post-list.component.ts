@@ -7,65 +7,53 @@ import { UserService } from '../.././service/user.service';
 @Component({
   selector: 'app-display-post-list',
   templateUrl: './display-post-list.component.html',
-  styleUrls: ['./display-post-list.component.css']
+  styleUrls: ['./display-post-list.component.css'],
 })
 export class DisplayPostListComponent implements OnInit {
-
   @Input() comment: Post;
 
-  usr_name:string;
-  usr_id:string;
+  usr_name: string;
+  usr_id: string;
 
-
-  like_num:number;
+  like_num: number;
   like_check: number;
   like_display;
   canEdit = false;
 
-  constructor(
-    private postService: PostService,
-    private userService: UserService,
-  ) {
+  constructor(private postService: PostService, private userService: UserService) {
     this.usr_name = this.userService.getCurrentUserName();
     this.usr_id = this.userService.getCurrentUserId();
-
   }
 
   ngOnInit() {
-    
     this.like_num = this.comment.vote_list.length;
-    if(this.like_num == undefined){
+    if (this.like_num == undefined) {
       this.like_num = 0;
     }
-    
+
     this.checkDisplayLike();
 
-
-    if(this.usr_name == this.comment.username){
+    if (this.usr_name == this.comment.username) {
       this.canEdit = true;
-    }
-    else {
+    } else {
       this.canEdit = false;
     }
   }
 
-  checkDisplayLike(){
+  checkDisplayLike() {
     this.like_check = this.comment.vote_list.indexOf(this.usr_id);
 
-    if(this.like_check != -1){
+    if (this.like_check != -1) {
       this.like_display = true;
-    }
-    else{
+    } else {
       this.like_display = false;
     }
-    console.log("like display ",this.like_display);
+    console.log('like display ', this.like_display);
   }
 
-
-  likepost(){
-
+  likepost() {
     //  unlike
-    if(this.like_display){
+    if (this.like_display) {
       this.like_display = false;
       this.postService.unlikePost(this.comment.id, this.usr_id, this.comment.vote_list);
     }
@@ -76,13 +64,11 @@ export class DisplayPostListComponent implements OnInit {
     }
 
     this.checkDisplayLike();
-    
   }
 
-  deletepost(){
-    if(confirm("delete post")){
+  deletepost() {
+    if (confirm('delete post')) {
       this.postService.deletePost(this.comment.id);
     }
   }
-
 }

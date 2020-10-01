@@ -1,23 +1,29 @@
 <div class="header">
   <h3>My Lists</h3>
-  UserName<span>{{name}}</span> 
+  UserName<span>{{ name }}</span>
 </div>
 
 <div class="content">
   <div class="mylist-area">
-
     <div class="topnav">
       <ul>
-        <li *ngFor="let genre of genres ; index as i">
+        <li *ngFor="let genre of genres; index as i">
+          <a *ngIf="i == 0 && genre == selected" mat-button color="primary" class="active" (click)="select(genre)">{{
+            genre
+          }}</a>
 
-          <a *ngIf="i == 0 && genre == selected" mat-button color="primary"  class="active" (click)=select(genre)>{{genre}}</a>
+          <a *ngIf="i == 0 && genre != selected" mat-button color="primary" (click)="select(genre)">{{ genre }}</a>
 
-          <a *ngIf="i == 0 && genre != selected" mat-button color="primary" (click)=select(genre)>{{genre}}</a>
+          <a *ngIf="i > 0 && genre != selected" mat-button color="primary" (click)="select(genre)">{{ genre }}</a>
 
-          <a *ngIf="i > 0 && genre != selected"  mat-button color="primary" (click)=select(genre)>{{genre}}</a>
-
-          <a *ngIf="i > 0 && genre == selected" class="active-click" mat-button color="primary" (click)=select(genre)>{{genre}}</a>
-        
+          <a
+            *ngIf="i > 0 && genre == selected"
+            class="active-click"
+            mat-button
+            color="primary"
+            (click)="select(genre)"
+            >{{ genre }}</a
+          >
         </li>
       </ul>
     </div>
@@ -25,22 +31,19 @@
     <mat-divider></mat-divider>
 
     <div class="mylist">
-      <div  *ngFor="let comic of comic_lists">
+      <div *ngFor="let comic of comic_lists">
         <div *ngIf="selected == comic.genre || selected == 'All'">
           <div class="area">
-            <div class="cover" (click)=selectComic(comic)>
-              <img src={{comic.coverImg}}>
+            <div class="cover" (click)="selectComic(comic)">
+              <img src="{{ comic.coverImg }}" />
             </div>
             <div class="detail">
-              <span>{{comic.name}} </span><br>
-              <button (click)=DeleteComic(comic)>X</button>
+              <span>{{ comic.name }} </span><br />
+              <button (click)="DeleteComic(comic)">X</button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
 </div>
-
-

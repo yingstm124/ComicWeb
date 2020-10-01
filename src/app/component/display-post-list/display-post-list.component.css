@@ -9,15 +9,11 @@ p {
 
 .mat-icon-button:hover {
   color: red;
-
 }
 
-#like1{
+#like1 {
   color: rgb(221, 66, 221);
 }
-#like2{
-  color:black;
+#like2 {
+  color: black;
 }
-
-
-

@@ -8,15 +8,14 @@ import { BuycoinService } from './service/buycoin.service';
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-
-  opened :boolean;
-  greeting = "~ Wellcome to comic.Store ~";
-  displayname:string;
-  name:string;
-  email:string;
+  opened: boolean;
+  greeting = '~ Wellcome to comic.Store ~';
+  displayname: string;
+  name: string;
+  email: string;
   isLoggedIn = false;
   profileImg;
 
@@ -28,57 +27,46 @@ export class AppComponent {
     private route: Router,
     private userService: UserService,
     private buycoinService: BuycoinService,
-  ){}
+  ) {}
 
-  ngOnInit(){
+  ngOnInit() {
     this.afAuth.auth.onAuthStateChanged((user) => {
-     if(user){
-      var displayName = user.displayName;
-      var email = user.email;
-      var emailVerified = user.emailVerified;
-      var photoURL = user.photoURL;
-      var isAnonymous = user.isAnonymous;
-      var uid = user.uid;
-      var providerData = user.providerData;
+      if (user) {
+        var displayName = user.displayName;
+        var email = user.email;
+        var emailVerified = user.emailVerified;
+        var photoURL = user.photoURL;
+        var isAnonymous = user.isAnonymous;
+        var uid = user.uid;
+        var providerData = user.providerData;
 
-      this.name = displayName;
-      this.email = email;
-      this.isLoggedIn = true;
-      this.greeting = undefined;
+        this.name = displayName;
+        this.email = email;
+        this.isLoggedIn = true;
+        this.greeting = undefined;
 
-      this.displayname = this.name;
-      // this.profileImg = photoURL
+        this.displayname = this.name;
+        // this.profileImg = photoURL
 
-      // console.log("profile image",this.profileImg);
+        // console.log("profile image",this.profileImg);
 
-      this.buycoinService.getHistory(user.uid).subscribe(val => { this.coins = val.map(
-      e => {
-          this.total_coin = e.payload.doc.data()['total_coin'];
-          return {  id: e.payload.doc.id,
-                    ...e.payload.doc.data()
-                  } as History
-            })
+        this.buycoinService.getHistory(user.uid).subscribe((val) => {
+          this.coins = val.map((e) => {
+            this.total_coin = e.payload.doc.data()['total_coin'];
+            return { id: e.payload.doc.id, ...e.payload.doc.data() } as History;
+          });
+        });
+      } else {
+        this.isLoggedIn = false;
+      }
     });
-
-     }
-     else{
-       this.isLoggedIn = false;
-     }
-   })
-
-   
-
-   
-  }  
-
-
-  logout(){
-    if(confirm("logout")){
-      this.userService.logout();
-      window.alert("logout");
-    }
-    this.displayname = "";
-    
   }
 
+  logout() {
+    if (confirm('logout')) {
+      this.userService.logout();
+      window.alert('logout');
+    }
+    this.displayname = '';
+  }
 }

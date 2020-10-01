@@ -8,55 +8,38 @@ import { Observable, combineLatest } from 'rxjs';
 @Component({
   selector: 'app-comic-lists',
   templateUrl: './comic-lists.component.html',
-  styleUrls: ['./comic-lists.component.css']
+  styleUrls: ['./comic-lists.component.css'],
 })
 export class ComicListsComponent implements OnInit {
-
   @Input() genre: string;
   comics;
 
-
-  constructor(
-    private route: Router,
-    private comicService: ComicService,
-  ) { }
+  constructor(private route: Router, private comicService: ComicService) {}
 
   ngOnInit() {
-    if(this.genre == "All"){
-      this.comicService.getAllComic().subscribe(
-        val => {
-          this.comics = val.map(
-            e => {
-              
-              
-              return {
-                id: e.payload.doc.id,
-                ...e.payload.doc.data()
-              } as Comic
-            }
-          )
-        }
-      );
-    }
-  
-    else{
-      this.comicService.getComic(this.genre).subscribe(val => {
-        this.comics = val.map(
-          e => {
-            return {
-              id: e.payload.doc.id,
-              ...e.payload.doc.data()
-            } as Comic
-          }
-        )
+    if (this.genre == 'All') {
+      this.comicService.getAllComic().subscribe((val) => {
+        this.comics = val.map((e) => {
+          return {
+            id: e.payload.doc.id,
+            ...e.payload.doc.data(),
+          } as Comic;
+        });
+      });
+    } else {
+      this.comicService.getComic(this.genre).subscribe((val) => {
+        this.comics = val.map((e) => {
+          return {
+            id: e.payload.doc.id,
+            ...e.payload.doc.data(),
+          } as Comic;
+        });
       });
     }
-    
   }
 
-  selectComic(comic:Comic){
-    this.route.navigate(["chapter"]);
+  selectComic(comic: Comic) {
+    this.route.navigate(['chapter']);
     this.comicService.addCurrentComic(comic);
   }
-
 }

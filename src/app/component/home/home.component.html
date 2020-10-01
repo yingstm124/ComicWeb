@@ -1,28 +1,20 @@
-
-
 <div class="search-area">
-
   <div>
     <form id="search-bar">
-      <input 
-        matInput
-        type="search"
-        placeholder="search"
-        (keyup) = "searching($event)">
+      <input matInput type="search" placeholder="search" (keyup)="searching($event)" />
     </form>
   </div>
-
 </div>
 
 <div *ngIf="!displaysearch">
-<!---------------- banner ------------------->
+  <!---------------- banner ------------------->
   <div id="slider">
     <figure>
-      <img class="one" src="https://sv1.picz.in.th/images/2020/03/20/QioSM0.png">
-      <img src="https://sv1.picz.in.th/images/2020/03/20/Qio7uR.png">
-      <img src="https://sv1.picz.in.th/images/2020/03/20/Qiozwu.png">
-      <img src="https://sv1.picz.in.th/images/2020/03/20/Qio4DZ.png">
-      <img src="https://sv1.picz.in.th/images/2020/03/20/QioNJI.png">
+      <img class="one" src="https://sv1.picz.in.th/images/2020/03/20/QioSM0.png" />
+      <img src="https://sv1.picz.in.th/images/2020/03/20/Qio7uR.png" />
+      <img src="https://sv1.picz.in.th/images/2020/03/20/Qiozwu.png" />
+      <img src="https://sv1.picz.in.th/images/2020/03/20/Qio4DZ.png" />
+      <img src="https://sv1.picz.in.th/images/2020/03/20/QioNJI.png" />
     </figure>
   </div>
 
@@ -30,40 +22,21 @@
   <div class="genres-container">
     <div class="genre-area">
       <mat-tab-group mat-align-tabs="center">
-        <mat-tab 
-          label={{genre}} 
-          *ngFor="let genre of Genres">
-
+        <mat-tab label="{{ genre }}" *ngFor="let genre of Genres">
           <div class="genre-list">
-
             <app-comic-lists [genre]="genre"></app-comic-lists>
-
           </div>
-
         </mat-tab>
       </mat-tab-group>
     </div>
   </div>
-
 </div>
 
 <!------------------------------------------------------------------------>
 <div class="searching" *ngIf="displaysearch">
-
   <div class="search-container">
     <div class="comic" *ngFor="let si of search_item">
       <app-display-comic-search [comic]="si"></app-display-comic-search>
     </div>
   </div>
-    
-
 </div>
-
-
-
-
-
-
-
-
-

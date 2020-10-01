@@ -1,43 +1,44 @@
 <div class="container">
   <h3>Register</h3>
-  <br>
-  
-  <form [formGroup]="registerForm"> 
-    <mat-form-field class="example-full-width" >
+  <br />
+
+  <form [formGroup]="registerForm">
+    <mat-form-field class="example-full-width">
       <mat-label>Username</mat-label>
-      <input 
+      <input
         id="name"
-        type="text" 
+        type="text"
         matInput
         formControlName="Name"
-        [(ngModel)]="username" 
-        placeholder="Ex. sutimar555" >
-    </mat-form-field><br>
+        [(ngModel)]="username"
+        placeholder="Ex. sutimar555"
+      /> </mat-form-field
+    ><br />
 
     <mat-form-field>
       <mat-label>Email</mat-label>
       <input
-        id="email" 
-        type="email" 
-        matInput 
+        id="email"
+        type="email"
+        matInput
         formControlName="Email"
         [(ngModel)]="email"
-        placeholder="Ex. sutimar@example.com">
-    </mat-form-field><br>
+        placeholder="Ex. sutimar@example.com"
+      /> </mat-form-field
+    ><br />
 
     <mat-form-field>
       <mat-label>Password</mat-label>
       <input
-        id="password" 
+        id="password"
         type="password"
         formControlName="Password"
-        [(ngModel)]="password" 
-        matInput 
-        placeholder="at least 6 charactor" >
-    </mat-form-field><br>
-    
-    <button mat-raised-button type="sub" (click)=Submit()> Submit </button>
-  
+        [(ngModel)]="password"
+        matInput
+        placeholder="at least 6 charactor"
+      /> </mat-form-field
+    ><br />
+
+    <button mat-raised-button type="sub" (click)="Submit()">Submit</button>
   </form>
-  
 </div>
